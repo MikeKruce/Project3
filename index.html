@@ -10,16 +10,19 @@
     <header>
         <nav>
             <div class="nav-container">
-                <h1>Art Studio</h1>
+                <div class="logo-title">
+                    <img src="Styles/images/logo.png" alt="Art Studio Logo" class="logo">
+                    <h1>Vivid Art Studio</h1>
+                </div>
                 <div class="nav-buttons">
                     <button class="sign-in-button">Sign In</button>
-                    <button class="register-button">Register</button>
+                    <a href="register.html"><button class="register-button">Register</button></a>
                 </div>
             </div>
         </nav>
     </header>
     <section id="about">
-        <h2>Welcome to the Art Studio</h2>
+        <h2>Welcome to the Vivid Art Studio</h2>
         <p>Explore, Create, and be Inspired!</p>
         <p>Enjoy thousands of Digital Artworks from different artists with their own unique styles.</p>
         <p>Feel free to use any of the artworks from our site, as well as post your very own artworks for others to use. Enjoy!</p>
@@ -67,7 +70,25 @@
             </div>
         </div>
     </section>
+    <div id="signInModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Sign In</h2>
+            <form action="submit_signin.php" method="POST">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+                
+                <button type="submit">Sign In</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="client/"></script>
 </body>
 <footer>
+    <p>&copy; 2024 Art Studio.</p>
 </footer>
 </html>
