@@ -12,9 +12,10 @@
             <div class="nav-container">
                 <h1>Art Studio</h1>
                 <div class="nav-buttons">
-                    <button class="sign-in-button">Sign In</button>
-                    <button class="register-button">Register</button>
+                    <button class="sign-in-button" id="signInButton">Sign In</button>
+                    <button class="register-button" id="registerButton">Register</button>
                 </div>
+                
             </div>
         </nav>
     </header>
@@ -67,6 +68,23 @@
             </div>
         </div>
     </section>
+    <!-- modal structure -->
+<div id="imageModal" class="modal">
+    <div class="modal-content">
+        <span class="close-button">&times;</span>
+        <img id="modalImage" src="" alt="Artwork">
+        <div class="comments-section">
+            <h3>Comments</h3>
+            <ul id="commentsList">
+                <!-- Comments will be dynamically loaded here -->
+            </ul>
+            <textarea id="newComment" placeholder="Add a comment..."></textarea>
+            <button id="postCommentButton">Post Comment</button>
+        </div>
+    </div>
+</div>
+
+    <script src="Styles/js/script.js"></script>
 </body>
 <footer>
 </footer>

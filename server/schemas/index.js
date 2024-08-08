@@ -5,13 +5,13 @@ const typeDefs = gql`
     id: ID!
     username: String!
     email: String!
-    password: String!
     createdAt: String!
   }
 
   type Query {
     users: [User!]!
     user(id: ID!): User
+    searchUsers(name: String!): [User!]!
   }
 
   type Mutation {
