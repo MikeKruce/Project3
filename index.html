@@ -12,11 +12,15 @@
             <div class="nav-container">
                 <div class="logo-title">
                     <img src="Styles/images/logo.png" alt="Art Studio Logo" class="logo">
-                    <h1>Vivid Art Studio</h1>
+                    <h1 class="gradient-text">
+                        <span>V</span><span>i</span><span>v</span><span>i</span><span>d</span> 
+                        <span>A</span><span>r</span><span>t</span> 
+                        <span>S</span><span>t</span><span>u</span><span>d</span><span>i</span><span>o</span>
+                    </h1>
                 </div>
                 <div class="nav-buttons">
                     <button class="sign-in-button">Sign In</button>
-                    <button class="register-button">Register</button>
+                    <a href="register.html"><button class="register-button">Register</button></a>
                 </div>
                 
             </div>
@@ -71,6 +75,25 @@
             </div>
         </div>
     </section>
+     <div id="signInModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Sign In</h2>
+            <form action="submit_signin.php" method="POST">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+                
+                <button type="submit">Sign In</button>
+            </form>
+        </div>
+    </div>
+    <script src="server/Signin.js"></script>
+</body>
+</html>
+    
 </body>
 <footer>
     <p>&copy; 2024 Art Studio.</p>
