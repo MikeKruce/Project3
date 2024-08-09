@@ -1,12 +1,12 @@
-const bcrypt = require('bcryptjs');
-const jwt = require('jsonwebtoken');
 const { User } = require('../models/User');
-const { secretOrKey } = require('../config/keys');
 
 const resolvers = {
   Query: {
     users: async () => await User.find(),
     user: async (parent, args) => await User.findById(args.id),
+    searchUsers: async (parent, { name }) => {
+      return await User.find({ username: { $regex: name, $options: 'i' } });
+    },
   },
   Mutation: {
     register: async (parent, args) => {
