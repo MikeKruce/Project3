@@ -1,7 +1,7 @@
 {
-  "name": "project3",
+  "name": "project3-client",
   "version": "1.0.0",
-  "description": "",
+  "description": "Frontend for Project 3",
   "main": "index.js",
   "scripts": {
     "start": "react-scripts start",
@@ -14,15 +14,28 @@
   "license": "ISC",
   "dependencies": {
     "@apollo/client": "^3.11.4",
-    "apollo-server-express": "^3.13.0",
-    "bcryptjs": "^2.4.3",
-    "dotenv": "^16.4.5",
-    "express": "^4.19.2",
+    "bcrypt": "^5.1.1",
+    "cors": "^2.8.5",
     "graphql": "^16.9.0",
-    "jsonwebtoken": "^9.0.2",
-    "mongoose": "^8.5.2",
+    "mongoose": "^8.5.3",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "react-router-dom": "^6.26.0",
     "react-scripts": "^5.0.1"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11"
   }
 }
