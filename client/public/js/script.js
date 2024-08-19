@@ -97,4 +97,32 @@ document.addEventListener('DOMContentLoaded', function() {
       });
     }
   });
+
+  let deferredPrompt;
+
+window.addEventListener('beforeinstallprompt', (e) => {
+    e.preventDefault();
+    deferredPrompt = e;
+    document.getElementById('installBanner').style.display = 'block';
+});
+
+document.getElementById('installButton').addEventListener('click', async () => {
+    document.getElementById('installBanner').style.display = 'none';
+    deferredPrompt.prompt();
+    const { outcome } = await deferredPrompt.userChoice;
+    deferredPrompt = null;
+});
+
+document.getElementById('dismissButton').addEventListener('click', () => {
+    document.getElementById('installBanner').style.display = 'none';
+});
+
+// iOS specific banner
+if (navigator.userAgent.includes('iPhone') || navigator.userAgent.includes('iPad')) {
+    document.getElementById('iosInstallBanner').style.display = 'block';
+}
+
+document.getElementById('dismissIosBanner').addEventListener('click', () => {
+    document.getElementById('iosInstallBanner').style.display = 'none';
+});
   

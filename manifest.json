@@ -1,0 +1,21 @@
+{
+  "name": "Vivid Art Studio",
+  "short_name": "Vivid Art Studio",
+  "description": "Social Media Platform for Artists",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#e60000",
+  "icons": [
+    {
+      "src": "/client/publicStyles/images/Logo.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/client/publicStyles/images/Logo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
