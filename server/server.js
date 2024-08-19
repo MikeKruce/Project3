@@ -1,7 +1,7 @@
 const express = require('express');
-const connectDB = require('./config/db'); // Adjust the path if necessary
-const cors = require('cors'); // Add this line to import the cors package
-const path = require('path'); // Add this line to import the path package
+const connectDB = require('./config/db'); // Connect to MongoDB
+const cors = require('cors'); 
+const path = require('path'); 
 
 const app = express();
 const port = process.env.PORT || 4000;
@@ -15,14 +15,14 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // API Routes
-app.use('/api/users', require('./routes/api/users')); // Adjusted path to the new users route handler
-app.use('/api/posts', require('./routes/postRoutes')); // Assuming this route exists
+app.use('/api/users', require('./routes/api/users')); // Adjusted path to the users route
+app.use('/api/posts', require('./routes/api/posts')); // Assuming postRoutes exist and are correctly named
 
-// Serve React App
+// Serve React App (Production)
 if (process.env.NODE_ENV === 'production') {
-  app.use(express.static(path.join(__dirname, 'build')));
+  app.use(express.static(path.join(__dirname, '../client/build'))); // Serve static files from the React app
   app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, 'build', 'index.html'));
+    res.sendFile(path.join(__dirname, '../client/build', 'index.html')); // Serve the React app for any other routes
   });
 }
 

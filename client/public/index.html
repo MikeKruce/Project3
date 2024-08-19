@@ -1,39 +1,48 @@
-<!-- public/index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Art Studio</title>
-    <link rel="stylesheet" href="%PUBLIC_URL%/Styles/css/style.css">
+    
+    <!-- Link to CSS -->
+    <link rel="stylesheet" href="/Styles/css/style.css">
+    
+    <!-- Link to Manifest for PWA -->
     <link rel="manifest" href="/manifest.json">
+    
+    <!-- Defer JS scripts to load after HTML -->
+    <script defer src="/static/js/bundle.js"></script>
 </head>
 <body>
     <div id="root"></div>
-    <script src="%PUBLIC_URL%/js/script.js"></script>
-<!--PWA INSTALL-->
-<div id="installBanner" class="install-banner" style="display: none;">
-    <div class="install-banner-content">
-        <img src="/styles/logos/CircleLogo512.png" alt="App Logo" class="install-banner-logo">
-        <div class="install-banner-text">
-            <p>Install our app for a better experience!</p>
-        </div>
-        <div class="install-banner-buttons">
-            <button id="installButton">Install</button>
-            <button id="dismissButton">Dismiss</button>
-        </div>
-    </div>
-</div>
-<!-- iOS Install Banner -->
-<div id="iosInstallBanner" class="ios-install-banner" style="display: none;">
-    <div class="ios-install-content">
-        <img src="/styles/logos/CircleLogoFavicon.png" alt="App Logo" class="ios-install-logo">
-        <div class="ios-install-text">
-            <p>Install our app for a better experience! Tap <img src="/images/ios_install2.png" alt="Share" class="ios-share-icon"> and then "Add to Home Screen".</p>
-        </div>
-        <button id="dismissIosBanner">Dismiss</button>
-    </div>
-</div>
 
+    <!-- Main Script -->
+    <script defer src="/js/script.js"></script>
+    
+    <!-- PWA Install Banner -->
+    <div id="installBanner" class="install-banner" style="display: none;">
+        <div class="install-banner-content">
+            <img src="/Styles/images/logo.png" alt="App Logo" class="install-banner-logo">
+            <div class="install-banner-text">
+                <p>Install our app for a better experience!</p>
+            </div>
+            <div class="install-banner-buttons">
+                <button id="installButton">Install</button>
+                <button id="dismissButton">Dismiss</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- iOS Install Banner -->
+    <div id="iosInstallBanner" class="ios-install-banner" style="display: none;">
+        <div class="ios-install-content">
+            <img src="/Styles/images/logo.png" alt="App Logo" class="ios-install-logo">
+            <div class="ios-install-text">
+                <p>Install our app for a better experience! Tap <img src="/images/ios_install2.png" alt="Share" class="ios-share-icon"> and then "Add to Home Screen".</p>
+            </div>
+            <button id="dismissIosBanner">Dismiss</button>
+        </div>
+    </div>
 </body>
 </html>
