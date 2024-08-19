@@ -22,3 +22,7 @@ A platform for artists to create and share their digital portfolios.
 - Follow favorite artists and receive updates
 - Integration with social media for sharing portfolios
 - Art competitions and showcases
+
+## Links
+- https://vivid-art-studio.onrender.com/
+- https://github.com/MikeKruce/Project3
