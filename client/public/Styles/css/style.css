@@ -359,37 +359,61 @@ footer {
     100% { background-position: 100% 100%; }
 }
 
-.install-banner, .ios-install-banner {
+.install-banner {
     position: fixed;
     bottom: 0;
+    left: 0;
     width: 100%;
-    background-color: #fff;
-    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
-    z-index: 1000;
+    z-index: 1000; /* Ensure it stays on top of other content */
+    background-color: #333; /* Adjust background color as needed */
+    padding: 10px;
+    box-sizing: border-box; /* Include padding in the width calculation */
 }
 
-.install-banner-content, .ios-install-content {
+.install-banner-content {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 10px;
+    max-width: 100%; /* Ensure content does not exceed the screen width */
+    margin: 0 auto; /* Center content within the banner */
+    box-sizing: border-box; /* Include padding and margin in width calculation */
 }
 
-.install-banner-logo, .ios-install-logo {
-    height: 40px;
+.install-banner-logo {
+    width: 50px; /* Adjust size as needed */
+    height: auto;
+    margin-right: 10px;
 }
 
-.install-banner-text, .ios-install-text {
+.install-banner-text {
     flex-grow: 1;
-    margin-left: 10px;
+    margin-right: 10px;
+    color: #fff; /* White text */
+    text-align: center; /* Center the text */
 }
 
-.install-banner-buttons button, #dismissIosBanner {
-    margin-left: 10px;
+.install-banner-buttons {
+    display: flex;
+    gap: 10px; /* Space between buttons */
 }
 
-.ios-share-icon {
-    height: 20px;
-    vertical-align: middle;
+.install-banner-buttons button {
+    padding: 0.5em 1em;
+    background-color: #777; /* Button background color */
+    color: #fff; /* Button text color */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
 }
 
+#installButton {
+    margin-right: auto; /* Pushes the Dismiss button to the right */
+}
+
+#dismissButton {
+    margin-left: 10px; /* Space between Install and Dismiss */
+}
+
+body {
+    padding-bottom: 60px; /* Adjust to the height of your banner to prevent content from being hidden under it */
+}
