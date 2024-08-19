@@ -1,34 +1,28 @@
+// server/routes/userRoutes.js
 const express = require('express');
 const router = express.Router();
-const bcrypt = require('bcrypt');
-const User = require('../models/User');
+const { check } = require('express-validator');
+const { registerUser, loginUser } = require('../controllers/userController');
 
 // Register a new user
-router.post('/register', async (req, res) => {
-  const { username, email, password } = req.body;
+router.post(
+  '/register',
+  [
+    check('username', 'Username is required').not().isEmpty(),
+    check('email', 'Please include a valid email').isEmail(),
+    check('password', 'Please enter a password with 6 or more characters').isLength({ min: 6 }),
+  ],
+  registerUser
+);
 
-  console.log('Received request to register user:', { username, email });
-
-  try {
-    const hashedPassword = await bcrypt.hash(password, 10);
-    const newUser = new User({ username, email, password: hashedPassword });
-
-    console.log('Saving new user:', newUser);
-
-    await newUser.save();
-
-    console.log('User registered successfully');
-
-    res.status(201).json({ message: 'User registered successfully' });
-  } catch (error) {
-    console.error('Error registering user:', error);
-
-    if (error.code === 11000) {
-      res.status(400).json({ message: 'Username or email already exists' });
-    } else {
-      res.status(500).json({ message: 'Error registering user', error });
-    }
-  }
-});
+// Login user
+router.post(
+  '/login',
+  [
+    check('email', 'Please include a valid email').isEmail(),
+    check('password', 'Password is required').exists(),
+  ],
+  loginUser
+);
 
 module.exports = router;
